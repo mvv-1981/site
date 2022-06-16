@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>CSS Веб сайт</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Пример документа CSS Веб сайта на Schoolsw3.com">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Стиль тела */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Заголовок/название логотипа */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Увеличьте размер шрифта заголовка */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Липкая навигация - переключение между относительным и фиксированным, в зависимости от положения прокрутки. Он позиционируется относительно до тех пор, пока заданная позиция смещения не будет встречена в окне просмотра - тогда она "прилипает" на месте (например, позиция:фиксированная). Значение sticky не поддерживается в IE или Edge 15 и более ранних версиях. Однако для этих версий navbar унаследует позицию по умолчанию */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Стиль ссылок на панели навигации */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Выровненная по правому краю ссылка */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Активная / текущая ссылка */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Контейнер колонка  */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Создайте два неравных столбца, которые находятся рядом друг с другом */
+/* Боковая панель/левая колонка */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Главная колонка */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Поддельные изображения, только для этого примера */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Подвал */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Адаптивный макет - когда экран имеет ширину менее 700px, сделайте два столбца стеком друг на друга, а не рядом друг с другом */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Адаптивный макет - когда экран меньше 400 пикселей в ширину, сделайте навигационные ссылки стекаются друг на друга, а не рядом друг с другом */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Веб сайт</h1>
+  <p><b>Отзывчивый</b> сайт создан мной.</p>
+</div>
+
+<div class="navbar">
+  <a href="tryhow_css_example_website.htm#" class="active">Главная</a>
+  <a href="tryhow_css_example_website.htm#">Ссылка</a>
+  <a href="tryhow_css_example_website.htm#">Ссылка</a>
+  <a href="tryhow_css_example_website.htm#" class="right">Ссылка</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>Обо мне</h2>
+    <h5>Фото меня:</h5>
+    <div class="fakeimg" style="height:200px;">Изображение</div>
+    <p>Какой-то текст обо мне в culpa qui officia deserunt mollit anim..</p>
+    <h3>Дополнительный текст</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    <div class="fakeimg" style="height:60px;">Изображение</div><br>
+    <div class="fakeimg" style="height:60px;">Изображение</div><br>
+    <div class="fakeimg" style="height:60px;">Изображение</div>
+  </div>
+  <div class="main">
+    <h2>НАЗВАНИЕ РУБРИКИ</h2>
+    <h5>Название описание, 7 декабря 2017</h5>
+    <div class="fakeimg" style="height:200px;">Изображение</div>
+    <p>Некоторый текст.</p>
+    <p>Для в culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <br>
+    <h2>НАЗВАНИЕ РУБРИКИ</h2>
+    <h5>Название описание, 2 сентября, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Изображение</div>
+    <p>Некоторый текст.</p>
+    <p>Для в culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Подвал</h2>
+</div>
+
+</body>
+</html>
