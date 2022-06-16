@@ -1,80 +1,170 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<title>Business website</title>
-<meta name="description" content="Business website">
-<meta name="keywords" content="business, website">
-<meta name="robots" content="index, follow">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<title>CSS Веб сайт</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Пример документа CSS Веб сайта на Schoolsw3.com">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Стиль тела */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Заголовок/название логотипа */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Увеличьте размер шрифта заголовка */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Липкая навигация - переключение между относительным и фиксированным, в зависимости от положения прокрутки. Он позиционируется относительно до тех пор, пока заданная позиция смещения не будет встречена в окне просмотра - тогда она "прилипает" на месте (например, позиция:фиксированная). Значение sticky не поддерживается в IE или Edge 15 и более ранних версиях. Однако для этих версий navbar унаследует позицию по умолчанию */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Стиль ссылок на панели навигации */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Выровненная по правому краю ссылка */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Активная / текущая ссылка */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Контейнер колонка  */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Создайте два неравных столбца, которые находятся рядом друг с другом */
+/* Боковая панель/левая колонка */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Главная колонка */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Поддельные изображения, только для этого примера */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Подвал */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Адаптивный макет - когда экран имеет ширину менее 700px, сделайте два столбца стеком друг на друга, а не рядом друг с другом */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Адаптивный макет - когда экран меньше 400 пикселей в ширину, сделайте навигационные ссылки стекаются друг на друга, а не рядом друг с другом */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
 </head>
 <body>
-<div id="wrap">
-  <div id="conteiner">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr valign="top">
-        <td width="202"><div><div id="logo">business portal</div>
-        <img src="images/spacer.gif" alt="" width="1" height="104"></div><div id="lmenu"><div id="lmenu_items"><a href="#">Home</a> <a href="#">About Us</a><a href="#">Our Clients</a><a href="#">Testimonials</a><a href="#">Blog</a><a href="#" style="background:url(images/lbullet-last.gif); background-repeat:no-repeat; background-position: 30px 7px;">Contact Details</a></div>
-          <div align="center"><img src="images/lmenu-bot.gif" alt=""></div>
-        </div><div class="lheader">Latest News</div>
-        <div align="center"><img src="images/lsep.gif" alt=""></div><div class="lnews">
-          <p><span class="lnews_data">05.06.2008</span><br>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-          <p align="right"><a href="#">read more...</a></p>
-        </div><div class="lnews">
-          <p><span class="lnews_data">28.05.2008</span><br>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-          <p align="right"><a href="#">read more...</a></p>
-        </div><div class="lnews">
-          <p><span class="lnews_data">15.04.2008</span><br>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-          <p align="right"><a href="#">read more...</a></p>
-        </div></td>
-        <td><div>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="398"><img src="images/p1.jpg" alt="" width="398" height="285"></td>
-              <td valign="top"><div id="search"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td><input type="text" class="login_form" value="find..."></td>
-    <td><input type="image" src="images/btn-go.gif"></td>
-  </tr>
-</table>
-</div><div id="welcome-text">
-  <h2>Welcome!</h2>
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.</p>
-    <p align="right"><a href="#">read more... </a></p>
-</div></td>
-            </tr>
-          </table>
-        </div><div class="body_txt">
-          <h1>Welcome to Our business website !</h1>
-<br>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr valign="top">
-              <td width="50%"><p>In economics, business is the social science of managing people to organize and maintain collective productivity toward accomplishing particular creative and productive goals, usually to generate revenue.</p>
-                <p>The etymology of &quot;business&quot; refers to the state of being busy, in the context of the individual as well as the community or society. In other words, to be busy is to be doing commercially viable and profitable work.</p>
-                <p>The term &quot;business&quot; has at least three usages, depending on the scope &mdash; the general usage (above), the singular usage to refer to a particular company or corporation, and the generalized usage to refer to a particular market sector, such as &quot;the record business,&quot; &quot;the computer business,&quot; or &quot;the business community&quot; -- the community of suppliers of goods and services.</p>
-                <p>&nbsp;</p>
-                </td>
-              <td width="20"><img src="images/spacer.gif" alt="" width="20" height="1"></td>
-              <td width="50%"><p>The singular &quot;business&quot; can be a legally-recognized entity within an economically free society, wherein individuals organize based on expertise and skills to bring about social and technological advancement.</p>
-                <p><em>From Wikipedia, the free encyclopedia</em></p>
-                <p>&nbsp;</p></td>
-            </tr>
-          </table>
-        </div></td>
-      </tr>
-    </table>
-  </div>
-</div><div id="footer"><div style="background-color:#cdcdcd; height:1px; width:760px; margin: 0 20px 0 20px;"><img src="images/spacer.gif" alt=""></div><table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td class="bottom_addr">&copy; 2008 Company Name. <br>
-      All Rights Reserved</td>
-    <td class="bottom_menu"><a href="#">Home Page</a>  |  <a href="#">About Us</a>  |  <a href="#">Our Clients</a>  |  <a href="#">Testimonials</a>  |  <a href="#">Price List</a>  |  <a href="#">Contact Details</a></td>
-  </tr>
-</table>
+
+<div class="header">
+  <h1>Веб сайт</h1>
+  <p><b>Отзывчивый</b> сайт создан мной.</p>
 </div>
-<div style="position:absolute;left:-3072px;top:0"><a href="http://smarttop.info">������� ������</a> <a href="http://ds-webevent.com">������� ������</a></div>
+
+<div class="navbar">
+  <a href="tryhow_css_example_website.htm#" class="active">Главная</a>
+  <a href="tryhow_css_example_website.htm#">Ссылка</a>
+  <a href="tryhow_css_example_website.htm#">Ссылка</a>
+  <a href="tryhow_css_example_website.htm#" class="right">Ссылка</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>Обо мне</h2>
+    <h5>Фото меня:</h5>
+    <div class="fakeimg" style="height:200px;">Изображение</div>
+    <p>Какой-то текст обо мне в culpa qui officia deserunt mollit anim..</p>
+    <h3>Дополнительный текст</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    <div class="fakeimg" style="height:60px;">Изображение</div><br>
+    <div class="fakeimg" style="height:60px;">Изображение</div><br>
+    <div class="fakeimg" style="height:60px;">Изображение</div>
+  </div>
+  <div class="main">
+    <h2>НАЗВАНИЕ РУБРИКИ</h2>
+    <h5>Название описание, 7 декабря 2017</h5>
+    <div class="fakeimg" style="height:200px;">Изображение</div>
+    <p>Некоторый текст.</p>
+    <p>Для в culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <br>
+    <h2>НАЗВАНИЕ РУБРИКИ</h2>
+    <h5>Название описание, 2 сентября, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Изображение</div>
+    <p>Некоторый текст.</p>
+    <p>Для в culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Подвал</h2>
+</div>
+
 </body>
 </html>
